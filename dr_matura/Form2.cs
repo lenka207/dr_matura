@@ -13,7 +13,7 @@ namespace WindowsFormsApp8
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public Form2(Form1 pocetnaForma)
         {
             InitializeComponent();
         }
@@ -23,7 +23,6 @@ namespace WindowsFormsApp8
             if (podaci.Count == 0)
                 return;
             Form2.Snimi1(podaci, @"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop4.txt");
-            MessageBox.Show("gotov");
         }
 
         private List<string> UcitajUNiz()
@@ -45,13 +44,20 @@ namespace WindowsFormsApp8
         }
         public static void Snimi1(List<string> tx, string imeDatoteke)
         {
-            string sadrzaj = tx.Text;
-            // Provjera je li korisnik unio sadržaj
+            StringBuilder csv = new StringBuilder();
+            // List: [ime1 nesto zdravo]
+            foreach (string elem in tx)
+            {
+                csv.Append("\"");
+                csv.Append(elem);
+                csv.Append("\"");
+                csv.Append(",");
+            }
+            // csv: "ime1","nesto","zdravo",
+            csv.Replace(",", "\n", csv.Length - 1, 1);
             try
             {
-                // Spremanje sadržaja u datoteku
-                File.WriteAllText(imeDatoteke, sadrzaj);
-                MessageBox.Show("Tekst je uspješno spremljen u Notepad!", "Spremanje završeno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                File.AppendAllText(imeDatoteke, csv.ToString());
             }
             catch (Exception ex)
             {

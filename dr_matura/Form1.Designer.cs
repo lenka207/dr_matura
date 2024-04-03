@@ -59,7 +59,7 @@ namespace WindowsFormsApp8
             this.cb1.Name = "cb1";
             this.cb1.Size = new System.Drawing.Size(120, 21);
             this.cb1.TabIndex = 2;
-            this.cb1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cb1.SelectionChangeCommitted += new System.EventHandler(this.cb1_SelectionChangeCommitted);
             // 
             // comboBox2
             // 
