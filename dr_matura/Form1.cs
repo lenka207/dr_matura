@@ -55,7 +55,6 @@ namespace WindowsFormsApp8
             templateovi.Clear();
             File.Delete(imedat);
             cb1.Items.Clear();
-
         }
     }
 }
