@@ -13,25 +13,27 @@ namespace WindowsFormsApp8
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        Form1 pocetnaForma;
+        public Form2(Form1 pocetnaForma)
         {
+            this.pocetnaForma = pocetnaForma;
             InitializeComponent();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            List<string> podaci = UcitajUNiz();
+            List<string> podaci = proveriniz();
             if (podaci.Count == 0)
                 return;
             Form2.Snimi1(podaci, @"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop4.txt");
-            MessageBox.Show("gotov");
         }
 
-        private List<string> UcitajUNiz()
+        private List<string> proveriniz()
         {
             List<string> r = new List<string>();
             r.Add(textBox1.Text);
             r.Add(comboBox1.Text);
             r.Add(comboBox2.Text);
+            r.Add(comboBox3.Text); //
             foreach (string elem in r)
             {
                 if (string.IsNullOrWhiteSpace(elem))
@@ -43,20 +45,33 @@ namespace WindowsFormsApp8
 
             return r;
         }
+
         public static void Snimi1(List<string> tx, string imeDatoteke)
         {
-            string sadrzaj = tx.Text;
-            // Provjera je li korisnik unio sadržaj
+            StringBuilder csv = new StringBuilder();
+            // List: [ime1 nesto zdravo]
+            foreach (string elem in tx)
+            {
+                csv.Append("\"");
+                csv.Append(elem);
+                csv.Append("\"");
+                csv.Append(",");
+            }
+            // csv: "ime1","nesto","zdravo",
+            csv.Replace(",", "\n", csv.Length - 1, 1);
             try
             {
-                // Spremanje sadržaja u datoteku
-                File.WriteAllText(imeDatoteke, sadrzaj);
-                MessageBox.Show("Tekst je uspješno spremljen u Notepad!", "Spremanje završeno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                File.AppendAllText(imeDatoteke, csv.ToString());
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Došlo je do greške prilikom spremanja datoteke: " + ex.Message, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
