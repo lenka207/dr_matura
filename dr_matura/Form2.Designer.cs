@@ -35,6 +35,7 @@ namespace WindowsFormsApp8
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -50,9 +51,9 @@ namespace WindowsFormsApp8
             "Русински језик и књижевност",
             "Словачки језик и књижевност",
             "Хрватски језик и књижевност"});
-            this.comboBox1.Location = new System.Drawing.Point(87, 83);
+            this.comboBox1.Location = new System.Drawing.Point(87, 136);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(154, 21);
             this.comboBox1.TabIndex = 0;
             // 
             // comboBox2
@@ -60,9 +61,9 @@ namespace WindowsFormsApp8
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Математика"});
-            this.comboBox2.Location = new System.Drawing.Point(87, 126);
+            this.comboBox2.Location = new System.Drawing.Point(87, 178);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.Size = new System.Drawing.Size(154, 21);
             this.comboBox2.TabIndex = 1;
             // 
             // label1
@@ -107,11 +108,35 @@ namespace WindowsFormsApp8
             "Француски језик",
             "Хемија",
             "Шпански језик"});
-            this.comboBox3.Location = new System.Drawing.Point(87, 169);
+            this.comboBox3.Location = new System.Drawing.Point(87, 217);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.Size = new System.Drawing.Size(154, 21);
             this.comboBox3.TabIndex = 6;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "opšta matura",
+            "poljoprivreda,proizvodnja i prerada hrane",
+            "šumarstvo i obrada drveta",
+            "geologija, rudarstvo i metalurgija",
+            "mašinstvo i obrada metala",
+            "elektrotehnika",
+            "hemija, nemetali i grafičarstvo",
+            "tekstilstvo i kožarstvo",
+            "geodezija i građevinarstvo",
+            "saobraćaj",
+            "trgovina, ugostiteljstvo i turizam",
+            "ekonomija, pravo i administracija",
+            "zdravstvo i socijalna zaštita",
+            "lične usluge"});
+            this.comboBox4.Location = new System.Drawing.Point(87, 73);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(199, 21);
+            this.comboBox4.TabIndex = 7;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // Form2
             // 
@@ -119,6 +144,7 @@ namespace WindowsFormsApp8
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
@@ -140,5 +166,6 @@ namespace WindowsFormsApp8
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox4;
     }
 }

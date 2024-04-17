@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.FileIO;
 
 namespace WindowsFormsApp8
 {
@@ -24,7 +25,8 @@ namespace WindowsFormsApp8
             List<string> podaci = proveriniz();
             if (podaci.Count == 0)
                 return;
-            Form2.Snimi1(podaci, @"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop4.txt");
+            Form2.Snimi1(podaci, @"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop.txt");
+            MessageBox.Show("gotovo");
         }
 
         private List<string> proveriniz()
@@ -72,6 +74,104 @@ namespace WindowsFormsApp8
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+            int selectedIndex = comboBox4.SelectedIndex;
+
+            // Clear existing items
+            comboBox3.Items.Clear();
+
+            // Depending on the selected index, load text from the corresponding file into comboBox3
+            switch (selectedIndex)
+            {
+                case 0:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop0.txt");
+                    break;
+                case 1:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop1.txt");
+                    break;
+                case 2:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop2.txt");
+                    break;
+                case 3:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop3.txt");
+                    break;
+                case 4:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop4.txt");
+                    break;
+                case 5:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop5.txt");
+                    break;
+                case 6:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop6.txt");
+                    break;
+                case 7:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop7.txt");
+                    break;
+                case 8:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop8.txt");
+                    break;
+                case 9:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop9.txt");
+                    break;
+                case 10:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop10.txt");
+                    break;
+                case 11:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop11.txt");
+                    break;
+                case 12:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop12.txt");
+                    break;
+                case 13:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop13.txt");
+                    break;
+            }
+        }
+        public static class CSVcitac1
+        {
+            public static List<List<string>> Ucitaj1(string imedatoteke)
+            {
+                var r = new List<List<string>>();
+                using (var MyReader = new TextFieldParser(imedatoteke))
+                {
+                    MyReader.TextFieldType = FieldType.Delimited;
+                    MyReader.SetDelimiters(",");
+                    while (!MyReader.EndOfData)
+                    {
+                        var red = new List<string>();
+                        string[] fields = MyReader.ReadFields();
+                        foreach (string elem in fields)
+                        {
+                            red.Add(elem);
+                        }
+                        r.Add(red);
+                    }
+                }
+                return r;
+            }
+        }
+        private void LoadTextFromFile(string filePath)
+        {
+            // Check if the file exists
+            if (File.Exists(filePath))
+            {
+                // Read all lines from the file
+                string[] lines = File.ReadAllLines(filePath);
+
+                // Add each line to the comboBox3
+                foreach (string line in lines)
+                {
+                    comboBox3.Items.Add(line);
+                }
+            }
+            else
+            {
+                MessageBox.Show("File not found: " + filePath);
+            }
         }
     }
 }

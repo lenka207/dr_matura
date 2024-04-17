@@ -14,13 +14,18 @@ namespace WindowsFormsApp8
 {
     public partial class Form1 : Form
     {
+        //refresh dugme u formi 1
+        // smerovi opsti itd
+        
         List<List<string>> templateovi;
-        public string imedat = @"C:\\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop4.txt";
+        public string imedat = @"C:\\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop.txt";
+        
         public Form1()
         {
             InitializeComponent();
-            templateovi = CSVcitac.Ucitaj(imedat);
-            UT(templateovi);
+
+            //templateovi = CSVcitac.Ucitaj(imedat);
+           //UT(templateovi);
         }
         private void UT(List<List<string>> r)
         {
@@ -48,6 +53,9 @@ namespace WindowsFormsApp8
             comboBox2.Text = templateovi[cb.SelectedIndex][1];
             comboBox3.Text = templateovi[cb.SelectedIndex][2];
             comboBox1.Text = templateovi[cb.SelectedIndex][3];//
+
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -55,6 +63,19 @@ namespace WindowsFormsApp8
             templateovi.Clear();
             File.Delete(imedat);
             cb1.Items.Clear();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            cb1.Items.Clear();
+            templateovi = CSVcitac.Ucitaj(imedat);
+             UT(templateovi);
+      
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
