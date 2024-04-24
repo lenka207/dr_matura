@@ -35,7 +35,9 @@ namespace WindowsFormsApp8
             r.Add(textBox1.Text);
             r.Add(comboBox1.Text);
             r.Add(comboBox2.Text);
-            r.Add(comboBox3.Text); //
+            r.Add(comboBox3.Text); 
+            r.Add(comboBox4.Text); 
+            r.Add(comboBox5.Text); 
             foreach (string elem in r)
             {
                 if (string.IsNullOrWhiteSpace(elem))
@@ -81,10 +83,8 @@ namespace WindowsFormsApp8
            
             int selectedIndex = comboBox4.SelectedIndex;
 
-            // Clear existing items
             comboBox3.Items.Clear();
 
-            // Depending on the selected index, load text from the corresponding file into comboBox3
             switch (selectedIndex)
             {
                 case 0:
@@ -129,6 +129,9 @@ namespace WindowsFormsApp8
                 case 13:
                     LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop13.txt");
                     break;
+                case 14:
+                    LoadTextFromFile(@"C:\Users\Ucenik.PRVABEOGIM\Desktop\Lenka\OOP\oop14.txt");
+                    break;
             }
         }
         public static class CSVcitac1
@@ -156,13 +159,9 @@ namespace WindowsFormsApp8
         }
         private void LoadTextFromFile(string filePath)
         {
-            // Check if the file exists
             if (File.Exists(filePath))
             {
-                // Read all lines from the file
                 string[] lines = File.ReadAllLines(filePath);
-
-                // Add each line to the comboBox3
                 foreach (string line in lines)
                 {
                     comboBox3.Items.Add(line);

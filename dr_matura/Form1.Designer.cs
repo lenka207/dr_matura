@@ -49,6 +49,14 @@ namespace WindowsFormsApp8
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -78,15 +86,15 @@ namespace WindowsFormsApp8
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Српски језик и књижевност",
-            "Албански језик и књижевност",
-            "Босански језик и књижевност",
-            "Бугарски језик и књижевност",
-            "Мађарски језик и књижевност",
-            "Румунски језик и књижевност",
-            "Русински језик и књижевност",
-            "Словачки језик и књижевност",
-            "Хрватски језик и књижевност"});
+            "Srpski jezik i književnost",
+            "Albanski jezik i književnost",
+            "Bosanski jezik i književnost",
+            "Bugarski jezik i književnost",
+            "Mađarski jezik i književnost",
+            "Rumunski jezik i književnost",
+            "Rusinski jezik i književnost",
+            "Slovački jezik i književnost",
+            "Hrvatski jezik i književnost"});
             this.comboBox2.Location = new System.Drawing.Point(550, 183);
             this.comboBox2.MaxDropDownItems = 15;
             this.comboBox2.Name = "comboBox2";
@@ -97,7 +105,7 @@ namespace WindowsFormsApp8
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "Математика"});
+            "Matematika"});
             this.comboBox3.Location = new System.Drawing.Point(550, 242);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(194, 21);
@@ -127,22 +135,23 @@ namespace WindowsFormsApp8
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Биологија",
-            "Географија",
-            "Енглески језик",
-            "Историја",
-            "Италијански језик",
-            "Немачки језик",
-            "Руски језик",
-            "Српски као нематерњи језик",
-            "Физика",
-            "Француски језик",
-            "Хемија",
-            "Шпански језик"});
+            "Biologija",
+            "Geografija",
+            "Engleski jezik",
+            "Istorija",
+            "Italijanski jezik",
+            "Nemački jezik",
+            "Ruski jezik",
+            "Srpski kao nematernji jezik",
+            "Fizika",
+            "Francuski jezik",
+            "Hemija",
+            "Španski jezik"});
             this.comboBox1.Location = new System.Drawing.Point(550, 311);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(194, 21);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox3
             // 
@@ -204,18 +213,36 @@ namespace WindowsFormsApp8
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "opšta matura",
+            "         poljoprivreda,proizvodnja i prerada hrane",
+            "         šumarstvo i obrada drveta",
+            "         geologija, rudarstvo i metalurgija",
+            "         mašinstvo i obrada metala",
+            "        elektrotehnika",
+            "         hemija, nemetali i grafičarstvo",
+            "tekstilstvo i kožarstvo",
+            "geodezija i građevinarstvo",
+            "saobraćaj",
+            "trgovina, ugostiteljstvo i turizam",
+            "ekonomija, pravo i administracija",
+            "zdravstvo i socijalna zaštita",
+            "lične usluge",
+            "umetnička matura"});
             this.comboBox4.Location = new System.Drawing.Point(300, 214);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(194, 21);
             this.comboBox4.TabIndex = 15;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(299, 273);
+            this.comboBox5.Location = new System.Drawing.Point(299, 283);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(195, 21);
             this.comboBox5.TabIndex = 16;
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -257,12 +284,103 @@ namespace WindowsFormsApp8
             this.label8.TabIndex = 20;
             this.label8.Text = "predmet 3";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(373, 189);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 22);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "smer";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Sylfaen", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(323, 258);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(156, 22);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "jezik na kom se polaze";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(84, 387);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 55);
+            this.button4.TabIndex = 23;
+            this.button4.Text = "<<";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F);
+            this.button5.Location = new System.Drawing.Point(178, 387);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 55);
+            this.button5.TabIndex = 24;
+            this.button5.Text = "<";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F);
+            this.button6.Location = new System.Drawing.Point(550, 387);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 55);
+            this.button6.TabIndex = 25;
+            this.button6.Text = ">";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F);
+            this.button7.Location = new System.Drawing.Point(651, 387);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 55);
+            this.button7.TabIndex = 26;
+            this.button7.Text = ">>";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(351, 350);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 27;
+            this.button8.Text = "snimi";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(312, 387);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(167, 23);
+            this.button9.TabIndex = 28;
+            this.button9.Text = "dodaj novog ucenikia";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(878, 475);
+            this.ClientSize = new System.Drawing.Size(878, 485);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -312,6 +430,14 @@ namespace WindowsFormsApp8
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
     }
 }
 
